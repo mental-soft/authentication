@@ -1,3 +1,6 @@
+liquibase:
+  change-log: classpath:/db/db.changelog.xml
+
 spring:
-  thymeleaf:
-    cache: false
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource

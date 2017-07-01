@@ -16,6 +16,10 @@ repositories {
 
 dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf'
+    compile group: 'org.liquibase', name: 'liquibase-core'
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.1.1'
+    compile group: 'com.zaxxer', name: 'HikariCP'
+
     testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
 }
 
