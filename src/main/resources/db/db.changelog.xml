@@ -7,4 +7,10 @@
     http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
     <!--Database scriptleri-->
 
+    <changeSet id="1" author="coskun.deniz">
+        <createTable tableName="TUTORIAL">
+            <column name="COLUMN1" type="NUMBER"/>
+        </createTable>
+    </changeSet>
+
 </databaseChangeLog>
