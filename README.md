@@ -1,24 +1,24 @@
-#Dependency
+# Dependency
 - Postgresql
 
-###Run postgresql with docker
+### Run postgresql with docker
 docker run --name postgresql -itd -p 5432:5432 --restart always --env 'DB_NAME=authentication-dev,authentication-qa' --env 'DB_USER=dbuser' --env 'DB_PASS=12345' sameersbn/postgresql
 
 >Note: Locale makinenizi hem developer hem de qa makinesi olarak düşünebilirsiniz.
 Qa makineniz varsa authentication-qa databasei oluşturmanıza gerek yok.
 
-####Environment
+#### Environment
 3 tane environmentimiz vardır. 
 - [Default](src/main/resources/config/application-default.yml)
 - [Quality Assurance](src/main/resources/config/application-qa.yml)
 - [Production](src/main/resources/config/application-prod.yml)
 
-#Build
+# Build
 Gradle build işlemi için
 
 <code>gradlew clean build</code>
 
-#Run
+# Run
 
 #### Gradle üzerinden run etmek için
 
