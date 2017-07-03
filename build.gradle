@@ -29,3 +29,8 @@ dependencies {
 task wrapper(type: Wrapper) {
     gradleVersion = '4.0'
 }
+
+bootRun {
+    //bootRun ile çalıştırıldığında environment set edebilmek için gerekli.
+    systemProperties = System.properties
+}
