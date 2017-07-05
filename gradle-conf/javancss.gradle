@@ -11,18 +11,20 @@ ext.javancssReportFileName = "javancss.txt"
 ext.javancssReportFile = new File(javancssReportDir, javancssReportFileName)
 ext.javancssTargetDir = "src/main/java"
 
-task javancss << {
-    println 'Running javancss metrics tool'
-    file(javancssReportDir).mkdir()
+task javancss {
+    doLast {
+        println 'Running javancss metrics tool'
+        file(javancssReportDir).mkdir()
 
-    ant {
-        taskdef(name:'javancss',
-                classname:'javancss.JavancssAntTask',
-                classpath: configurations.javancssConf.asPath)
-        javancss(srcdir: javancssTargetDir,
-                abortOnFail:'true', generateReport:'true',
-                outputFile: javancssReportFile,
-                format: "plain")
+        ant {
+            taskdef(name: 'javancss',
+                    classname: 'javancss.JavancssAntTask',
+                    classpath: configurations.javancssConf.asPath)
+            javancss(srcdir: javancssTargetDir,
+                    abortOnFail: 'true', generateReport: 'true',
+                    outputFile: javancssReportFile,
+                    format: "plain")
+        }
     }
 }
 
