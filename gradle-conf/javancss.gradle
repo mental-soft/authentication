@@ -21,7 +21,8 @@ task javancss {
                     classname: 'javancss.JavancssAntTask',
                     classpath: configurations.javancssConf.asPath)
             javancss(srcdir: javancssTargetDir,
-                    abortOnFail: 'true', generateReport: 'true',
+                    abortOnFail: !ignoreFailuresInCheck.toBoolean(),
+                    generateReport: 'true',
                     outputFile: javancssReportFile,
                     format: "plain")
         }
