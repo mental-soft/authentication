@@ -1,35 +1,29 @@
 configurations {
-    javancss
+    javancssConf
 }
 
 dependencies {
-    javancss 'org.codehaus.javancss:javancss:33.54'
+    javancssConf 'javancss:javancss:29.50'
 }
+ext.javancssReportDirName = "javancss"
+ext.javancssReportDir = new File(reporting.baseDir, javancssReportDirName)
+ext.javancssReportFileName = "javancss.txt"
+ext.javancssReportFile = new File(javancssReportDir, javancssReportFileName)
+ext.javancssTargetDir = "src/main/java"
 
-task javancss() {
-    def ignoreFailures = ignoreFailuresInCheck.toBoolean()
-
-    // create output folders
-    def reportDir = file("$project.buildDir/reports/javancss")
-    reportDir.mkdirs()
-
-    //// exclude auto-generated code and 3rd party libs
-    def exclude = ['**/build/resources/**']
+task javancss << {
+    println 'Running javancss metrics tool'
+    file(javancssReportDir).mkdir()
 
     ant {
-        taskdef name: 'javancss',
-                classname: 'javancss.JavancssAntTask',
-                classpath: configurations.javancss.asPath
-
-        javancss srcdir: 'src',
-                packageMetrics: "yes",
-                excludes: exclude,
-                classMetrics: "yes",
-                functionMetrics: "yes",
-                abortOnFail: !ignoreFailures,
-                generateReport: true,
-                outputfile: "$reportDir/javancss.txt",
-                format: 'plain',
-                ccnPerFuncMax:10
+        taskdef(name:'javancss',
+                classname:'javancss.JavancssAntTask',
+                classpath: configurations.javancssConf.asPath)
+        javancss(srcdir: javancssTargetDir,
+                abortOnFail:'true', generateReport:'true',
+                outputFile: javancssReportFile,
+                format: "plain")
     }
 }
+
+tasks['check'].dependsOn javancss
