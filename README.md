@@ -18,7 +18,7 @@ Qa makineniz varsa authentication-qa databasei oluşturmanıza gerek yok.
 # Build
 Gradle build işlemi için
 
-<code>gradlew clean build</code>
+<code>gradlew build</code>
 
 # Run
 
