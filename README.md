@@ -50,22 +50,40 @@ Gradle build işlemi için
 <code>java -jar build/libs/authentication.jar --spring.profiles.active=qa</code>
 
 
-#Docker
+# Docker
 
-##Build docker
+## Projeyi docker komutundan çalıştırma
+>Docker run ile çalıştırırken dependent olan containerları ayağa kaldırmalısınız.
+
+<code>docker run -it --name cont_authentication -p 8080:8080 --link cont_postgresql mental/authentication</code>
+
+# Docker compose dan çalıştırma
+> Compose ile çalıştırırken dependent olan başka containerlar var ise durdurunuz. Yoksa port çakışması olur.
+
+<code>docker-compose up</code>
+
+
+## Up yaparken build etmek için
+<code>docker-compose up --build</code>
+
+
+## Build docker
+> Imagei değiştirmek isterseniz.
+
 Projeyi gradle ile build ettikten sonra docker 
 imageini oluşturmak için docker build etmelisiniz.
 
 <code>docker build -t mental/authentication .</code>
 
-##Projeyi docker üzerinden run etmek
 
-<code>docker run -it --name cont_authentication -p 8080:8080 --link cont_postgresql mental/authentication</code>
+# Browse
 
-
-#Docker compose
-<code>docker-compose up</code>
+[http://localhost:8080/authentication](http://localhost:8080/authentication)
 
 
-##Up yaparken build etmek için
-<code>docker-compose up --build</code>
+
+
+
+
+
+
