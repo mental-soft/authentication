@@ -4,7 +4,10 @@
 - Postgresql
 
 ### Run postgresql with docker 
-<code>docker run --name cont_postgresql -itd -p 5432:5432 --restart always --env 'DB_NAME=authentication-dev,authentication-qa' --env 'DB_USER=dbuser' --env 'DB_PASS=12345' sameersbn/postgresql</code>
+<code>docker run --name cont_postgresql 
+-itd -p 5432:5432 --restart always 
+-e DB_NAME=authentication-dev,authentication-qa 
+-e DB_USER=dbuser -e DB_PASS=12345 sameersbn/postgresql</code>
 
 
 >Note: Locale makinenizi hem developer hem de qa makinesi olarak düşünebilirsiniz.
@@ -57,7 +60,12 @@ imageini oluşturmak için docker build etmelisiniz.
 
 ##Projeyi docker üzerinden run etmek
 
-<code>docker run --name cont_authentication -p 8080:8080 --link cont_postgresql mental/authentication</code>
+<code>docker run -it --name cont_authentication -p 8080:8080 --link cont_postgresql mental/authentication</code>
 
 
 #Docker compose
+<code>docker-compose up</code>
+
+
+##Up yaparken build etmek için
+<code>docker-compose up --build</code>
