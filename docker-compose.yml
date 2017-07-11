@@ -7,6 +7,8 @@ services:
       - "8080:8080"
     links:
       - cont_postgresql
+    depends_on:
+      - cont_postgresql
     environment:
       SPRING_PROFILES_ACTIVE: default
   cont_postgresql:
