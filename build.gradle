@@ -14,7 +14,6 @@ apply plugin: 'org.springframework.boot'
 
 jar {
     baseName = 'authentication'
-    //version =  '0.1.0'
 }
 
 apply from: "https://raw.githubusercontent.com/mental-soft/gradle-config/master/global-config.gradle"

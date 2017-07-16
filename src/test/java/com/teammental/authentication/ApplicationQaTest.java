@@ -1,6 +1,6 @@
 package com.teammental.authentication;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 import liquibase.integration.spring.SpringLiquibase;
 import org.junit.Test;
@@ -11,6 +11,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
+/**
+ * Qa ortamı için hazırlanan test sınıfı.
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -20,9 +23,13 @@ public class ApplicationQaTest {
   @Autowired
   SpringLiquibase liquibase;
 
+  /**
+   * Liquibase qa ortamında drop yapmaması için test ediliyor.
+   * @throws Exception exception
+   */
   @Test
   public void checkDropFirst() throws Exception {
-    assertEquals(false, liquibase.isDropFirst());
+    assertFalse(liquibase.isDropFirst());
   }
 
 }

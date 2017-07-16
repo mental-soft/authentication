@@ -12,6 +12,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
+/**
+ * Test classı.
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -20,6 +23,10 @@ public class ApplicationTest {
   @Autowired
   private MockMvc mvc;
 
+  /**
+   * Index sayfası testi.
+   * @throws Exception exception
+   */
   @Test
   public void getIndex() throws Exception {
     mvc.perform(MockMvcRequestBuilders.get("/")
