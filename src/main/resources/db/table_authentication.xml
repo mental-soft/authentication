@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="1" author="coskun.deniz">
+        <comment>Şifrelerin tutulduğu tablo.
+            - RENEW_PASSWORD_CODE kolonu şifresini unutanlar için gönderilecek yenileme linki için kullanılacak.</comment>
+        <createTable tableName="AUTHENTICATION">
+            <column name="USER_ID" type="NUMBER">
+                <constraints primaryKey="true" primaryKeyName="PK_USER_ID"/>
+            </column>
+            <column name="PASSWORD" type="VARCHAR(500)"/>
+            <column name="RENEW_PASSWORD_CODE" type="VARCHAR(500)"/>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>
