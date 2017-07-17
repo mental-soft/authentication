@@ -1,4 +1,4 @@
-package com.teammental.authentication.domain;
+package com.teammental.authentication.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
