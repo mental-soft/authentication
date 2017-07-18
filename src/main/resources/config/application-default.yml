@@ -10,3 +10,4 @@ spring:
 
 liquibase:
   drop-first: true
+  context: test

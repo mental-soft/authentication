@@ -8,7 +8,8 @@
 
     <changeSet id="1" author="coskun.deniz">
         <comment>Şifrelerin tutulduğu tablo.
-            - RENEW_PASSWORD_CODE kolonu şifresini unutanlar için gönderilecek yenileme linki için kullanılacak.</comment>
+            - RENEW_PASSWORD_CODE kolonu şifresini unutanlar için gönderilecek yenileme linki için kullanılacak.
+        </comment>
         <createTable tableName="AUTHENTICATION">
             <column name="USER_ID" type="NUMBER">
                 <constraints primaryKey="true" primaryKeyName="PK_USER_ID"/>
@@ -16,6 +17,22 @@
             <column name="PASSWORD" type="VARCHAR(500)"/>
             <column name="RENEW_PASSWORD_CODE" type="VARCHAR(500)"/>
         </createTable>
+    </changeSet>
+
+    <changeSet id="1" author="coskun.deniz" context="test">
+        <comment>Test datası eklendi</comment>
+        <insert tableName="AUTHENTICATION">
+            <column name="USER_ID" valueNumeric="1"/>
+            <column name="PASSWORD" value="testPassword1"/>
+        </insert>
+        <insert tableName="AUTHENTICATION">
+            <column name="USER_ID" valueNumeric="2"/>
+            <column name="PASSWORD" value="testPassword2"/>
+        </insert>
+        <insert tableName="AUTHENTICATION">
+            <column name="USER_ID" valueNumeric="3"/>
+            <column name="PASSWORD" value="testPassword3"/>
+        </insert>
     </changeSet>
 
 </databaseChangeLog>
