@@ -18,3 +18,12 @@ jar {
 apply from: "https://raw.githubusercontent.com/mental-soft/gradle-config/master/global-config.gradle"
 
 apply from: "https://raw.githubusercontent.com/mental-soft/gradle-config/master/dependencies.gradle"
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile group: 'org.springframework.security', name: 'spring-security-core'
+    compile 'com.teammental:mebuilder:+'
+}
