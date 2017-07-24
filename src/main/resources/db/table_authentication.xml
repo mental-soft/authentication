@@ -19,7 +19,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet id="1" author="coskun.deniz" context="test">
+    <changeSet id="2" author="coskun.deniz" context="test">
         <comment>Test datası eklendi</comment>
         <insert tableName="AUTHENTICATION">
             <column name="USER_ID" valueNumeric="1"/>
