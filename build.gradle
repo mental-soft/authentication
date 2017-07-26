@@ -24,6 +24,5 @@ repositories {
 }
 
 dependencies {
-    compile group: 'org.springframework.security', name: 'spring-security-core'
     compile 'com.teammental:mebuilder:+'
 }

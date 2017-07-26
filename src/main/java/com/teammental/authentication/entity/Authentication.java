@@ -17,9 +17,6 @@ public class Authentication {
   @Column(name = "USER_ID", columnDefinition = "NUMERIC")
   private int userId;
 
-  @Column(name = "PASSWORD")
-  private String password;
-
   @Column(name = "RENEW_PASSWORD_CODE")
   private String renewPasswordCode;
 
@@ -29,14 +26,6 @@ public class Authentication {
 
   public void setUserId(int userId) {
     this.userId = userId;
-  }
-
-  public String getPassword() {
-    return password;
-  }
-
-  public void setPassword(String password) {
-    this.password = password;
   }
 
   public String getRenewPasswordCode() {
