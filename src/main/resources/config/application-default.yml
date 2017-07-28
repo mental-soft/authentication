@@ -8,6 +8,11 @@ spring:
   jpa:
     show-sql: true
 
+logging:
+  file: logs/authentication/app.log
+  level:
+    root: INFO
+
 liquibase:
   drop-first: true
   contexts: test

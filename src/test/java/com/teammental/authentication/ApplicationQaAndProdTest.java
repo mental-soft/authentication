@@ -16,7 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(initializers = ConfigFileApplicationContextInitializer.class)
 @ActiveProfiles(value = {"qa", "prod"})
-public class ApplicationQaTest {
+public class ApplicationQaAndProdTest {
 
   @Value(value = "${liquibase.drop-first}")
   String isDropFirst;

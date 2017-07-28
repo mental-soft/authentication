@@ -1,5 +1,12 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/authentication-qa
+    url: jdbc:postgresql://${connection:localhost}:5432/authentication-qa
     username: dbuser
     password: 12345
+
+logging:
+  file: logs/authentication/app.log
+  level:
+    root: ERROR
+  pattern:
+    console:

@@ -20,18 +20,18 @@
     </changeSet>
 
     <changeSet id="2" author="coskun.deniz" context="test">
-        <comment>Test datası eklendi</comment>
+        <comment>Test datası eklendi. Şifreler 123 için crypt edildi.</comment>
         <insert tableName="AUTHENTICATION">
             <column name="USER_ID" valueNumeric="1"/>
-            <column name="PASSWORD" value="testPassword1"/>
+            <column name="PASSWORD" value="$2a$10$EDQcEPDMkUDTNroDcJv5VOFedaQ2oLSIE5B/UyRwa.BkH0YqObnya"/>
         </insert>
         <insert tableName="AUTHENTICATION">
             <column name="USER_ID" valueNumeric="2"/>
-            <column name="PASSWORD" value="testPassword2"/>
+            <column name="PASSWORD" value="$2a$10$EDQcEPDMkUDTNroDcJv5VOFedaQ2oLSIE5B/UyRwa.BkH0YqObnya"/>
         </insert>
         <insert tableName="AUTHENTICATION">
             <column name="USER_ID" valueNumeric="3"/>
-            <column name="PASSWORD" value="testPassword3"/>
+            <column name="PASSWORD" value="$2a$10$EDQcEPDMkUDTNroDcJv5VOFedaQ2oLSIE5B/UyRwa.BkH0YqObnya"/>
         </insert>
     </changeSet>
 

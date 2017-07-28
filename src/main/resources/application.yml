@@ -2,16 +2,12 @@ liquibase:
   change-log: classpath:/db/db.changelog.xml
 
 server:
-  port: 10002
+  port: 10020
   contextPath: /authentication
   ssl:
     enabled: true
     key-store: classpath:keystore/thekeystore.jks
     key-store-password: changeit
-
-logging:
-  level:
-    root: INFO
 
 spring:
   datasource:
