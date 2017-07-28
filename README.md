@@ -28,7 +28,10 @@ Gradle build işlemi için
 
 #### Gradle üzerinden run etmek için
 
-<code>gradlew bootRun</code>
+<code>gradlew bootRun</code> or
+
+
+<code>gradlew bRun</code>
 
 ###### Environment
 İstediğiniz environment için komutun sonuna -Dspring.profiles.active={profile-name} ekleyin.
