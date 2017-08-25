@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mental-soft/authentication.svg?branch=master)](https://travis-ci.org/mental-soft/authentication)
+
 # Mental Authentication
 
 # Dependency
