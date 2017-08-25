@@ -17,7 +17,7 @@ jar {
 
 apply from: "https://raw.githubusercontent.com/mental-soft/gradle-config/master/global-config.gradle"
 
-apply from: "https://raw.githubusercontent.com/mental-soft/gradle-config/master/dependencies.gradle"
+apply from: "https://raw.githubusercontent.com/mental-soft/gradle-config/master/dependencies-api.gradle"
 
 repositories {
     jcenter()
